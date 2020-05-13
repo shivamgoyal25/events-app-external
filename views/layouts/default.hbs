@@ -6,22 +6,57 @@
   <title>Team SuperSonics Website</title>
   <meta name="HandheldFriendly" content="True" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 </head>
 <body>
   <div>
       <h1>Welcome to SuperSonics application</h1>
-      <h2>The is to events feed Jobs</h2>
+      <h2>Below are the Job Openings</h2>
+      <table>
+    <tr>
+        <th> Job ID </th>
+        <th> Title </th>
+        <th> Description </th>
+        <th> Company </th>
+        <th> Like </th>
+        <th> Comment </th>
+        <th> Resume </th> 
     {{{body}}}
 </div>
 <div>
-  <h2>Add an Job Event</h2>
+  <h2>Add a Job Event</h2>
     <form action="/event" method="post">
-       title: <input name="title" type="text" /> <br />
-       description: <input name="description" type="text" /> <br />
-       company: <input name="company" type="text" /> <br />
-       <br />
-        <input type="submit" name="submit" value="submit" />
-    </form>
+        <table>
+        <tr>
+            <td> Job Title:
+             <input name="title" type="text" /> </td>
+        </tr>
+        <tr>
+            <td> Job Description: <input name="description" type="text" /> <br/> </td>
+        </tr>
+        <tr>
+            <td> Company Name: <input name="company" type="text" /> <br /> </td>
+        </tr>
+        <br />
+        </table>
+            <input type="submit" name="submit" value="Post Job" />
+        </form>
   </div>
 </body>
 </html>

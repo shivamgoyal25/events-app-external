@@ -1,28 +1,26 @@
 <ul >
   {{#events}}
-    <li>
-   
-        <h2>{{ title }}</h2>
-        <p>{{ description }}</p>
-         <p>{{ company }}</p>
-         <button type="button" class="btn btn-primary">Like</button>
-         <table>
         <tr>
-        <td><button type="button" class="btn btn-primary">Like</button></td>
-        <td>Adding a Comment</h4></td>
+            <td> {{ id }} </td>
+            <td> <h3>{{ title }}</h2> </td>
+            <td> <p>{{ description }}</p> </td>
+            <td> {{ company }} </td>
+            <td> <button type="button" class="btn btn-primary">Like</button> </td>
+            <td>
+                {{#comment}}
+                    {{comment}}
+                {{/comment}}
                 <form action="/addComment" method="post">
                     <input name="comment" type="text" />
                     <input name="Save" type="submit" value="Comment"/>
                 </form>
-        
-        </tr>
-        <tr>        
+            </td>
+            <td>      
                 <form action="/addResume" method="POST">
                     <input type="file" id="myFile" name="filename">
                     <input type="submit">
                 </form>
+            </td>
         </tr>
-        </table> 
-    </li>
   {{/events}}
 </ul>
