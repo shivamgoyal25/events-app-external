@@ -5,22 +5,35 @@
             <td> <h3>{{ title }}</h2> </td>
             <td> <p>{{ description }}</p> </td>
             <td> {{ company }} </td>
-            <td> <button type="button" class="btn btn-primary">Like</button> </td>
             <td>
-                {{#comment}}
-                    {{comment}}
-                {{/comment}}
+                Total Likes: {{likeCount}} </br> 
+                <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i> </td>
+            <td>
                 <form action="/addComment" method="post">
-                    <input name="comment" type="text" />
+                    <textarea name="comment" placeholder="Enter Comment.." style="width:200px;" style="height:100px">
+                    </textarea>
+                    </br>
                     <input name="Save" type="submit" value="Comment"/>
                 </form>
             </td>
             <td>      
                 <form action="/addResume" method="POST">
-                    <input type="file" id="myFile" name="filename">
-                    <input type="submit">
+                    <input type="file" id="myFile" name="filename"/>
+                    <input type="submit" value="Upload"/>
                 </form>
             </td>
+            <td>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+            </td> 
         </tr>
   {{/events}}
+</ul>
+
+<ul>
+    {{#comment}}
+         {{comment}}
+    {{/comment}}
 </ul>

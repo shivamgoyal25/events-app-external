@@ -6,57 +6,148 @@
   <title>Team SuperSonics Website</title>
   <meta name="HandheldFriendly" content="True" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+        table {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;;
+        border-collapse: collapse;
+        width: 30%;
+        }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
+        h1 {text-align: center;
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;;
+        }
+        p {text-align: center;
+           font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        }
+
+        #jobList {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        #jobList td, #jobList th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        #jobList tr:nth-child(even){background-color: #f2f2f2;}
+
+        #jobList th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+            }
+
+        .fa {
+                font-size: 10px;
+                cursor: pointer;
+                user-select: none;
+                align: center;
+            }
+        .fa:hover {
+                color: darkblue;
+            }
+        input[type=submit] {
+             background-color: #4CAF50;
+             color: white;
+             padding: 12px 20px;
+             border: none;
+             border-radius: 4px;
+             cursor: pointer;
+            }
+        input[type=submit]:hover {
+             background-color: #45a049;
+            }
+
+        .fa {
+                padding: 10px;
+                font-size: 15px;
+                width: 20px;
+                text-align: center;
+                text-decoration: none;
+                margin: 5px 2px;
+            }
+
+                .fa:hover {
+                    opacity: 0.7;
+                }
+
+                .fa-facebook {
+                background: #3B5998;
+                color: white;
+                }
+
+                .fa-twitter {
+                background: #55ACEE;
+                color: white;
+                }
+
+                .fa-google {
+                background: #dd4b39;
+                color: white;
+                }
+
+                .fa-linkedin {
+                background: #007bb5;
+                color: white;
+                }
+        </style>
 </head>
 <body>
   <div>
-      <h1>Welcome to SuperSonics application</h1>
-      <h2>Below are the Job Openings</h2>
-      <table>
-    <tr>
-        <th> Job ID </th>
-        <th> Title </th>
-        <th> Description </th>
-        <th> Company </th>
-        <th> Like </th>
-        <th> Comment </th>
-        <th> Resume </th> 
-    {{{body}}}
-</div>
-<div>
-  <h2>Add a Job Event</h2>
-    <form action="/event" method="post">
-        <table>
+      <h1>SuperSonics Job's Portal</h1>
+      <P>Find the most wanted Covid-19 Jobs</p>
+      <table id="jobList">
+         <tr>
+            <th> Job ID </th>
+            <th> Title </th>
+            <th> Description </th>
+            <th> Company </th>
+            <th> Like </th>
+            <th> Comment </th>
+            <th> Resume </th>
+            <th> Share </th> 
+        {{{body}}}
+        </tr>
+        </table>
+        <script>
+            function myFunction(x) {
+            x.classList.toggle("fa-thumbs-down");
+            }
+        </script>
+    </div>
+    <div>
+        <h3>Add a Job Event</h3>
+        <form action="/event" method="post">
+        <table id="jobEvent">
         <tr>
-            <td> Job Title:
-             <input name="title" type="text" /> </td>
+            <td> Job Title: </td>
+            <td> <input name="title" type="text" /> </td>
         </tr>
         <tr>
-            <td> Job Description: <input name="description" type="text" /> <br/> </td>
+            <td> Job Description: </td>
+            <td> <input name="description" type="text" /> </td>
         </tr>
         <tr>
-            <td> Company Name: <input name="company" type="text" /> <br /> </td>
+            <td> Company Name: </td> 
+            <td> <input name="company" type="text" /> </td>
         </tr>
-        <br />
         </table>
             <input type="submit" name="submit" value="Post Job" />
         </form>
-  </div>
+    </div>
 </body>
 </html>
