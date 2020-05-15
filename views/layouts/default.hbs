@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Team SuperSonics Website</title>
+  <title>Supersonic Website</title>
   <meta name="HandheldFriendly" content="True" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  {{!-- <meta name="viewport" content="width=device-width, initial-scale=1"> --}}
+  {{!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
   <style>
-        table {
+          table {
         font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;;
         border-collapse: collapse;
         width: 30%;
@@ -104,12 +105,53 @@
                 background: #007bb5;
                 color: white;
                 }
-        </style>
+/* Style the navigation bar */
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: #4CAF50;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+</style>
 </head>
 <body>
   <div>
-      <h1>SuperSonics Job's Portal</h1>
-      <P>Find the most wanted Covid-19 Jobs</p>
+      <h1>Supersonic Job Event</h1>
+      <P>Find jobs during Covid-19 </p>
+      <div class="navbar">
+            <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+            <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
+            <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+            <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+      </div>
       <table id="jobList">
          <tr>
             <th> Job ID </th>
@@ -130,7 +172,7 @@
         </script>
     </div>
     <div>
-        <h3>Add a Job Event</h3>
+        <h3>Add Job Event</h3>
         <form action="/event" method="post">
         <table id="jobEvent">
         <tr>
